@@ -1,5 +1,6 @@
 # Camera
 PRODUCT_PACKAGES += \
+    camera.msm8916 \
     libstlport \
     Snap \
     libshim_camera
