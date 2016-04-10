@@ -2,7 +2,7 @@
 PRODUCT_PACKAGES += \
     libstlport \
     Snap \
-    libcamera_shim
+    libshim_camera
 
 # Permissions
 PRODUCT_COPY_FILES += \

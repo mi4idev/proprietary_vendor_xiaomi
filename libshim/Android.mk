@@ -1,4 +1,4 @@
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,8 +16,11 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := camera_shim.cpp
-LOCAL_MODULE := libcamera_shim
+LOCAL_SRC_FILES := camera/sensor.cpp camera/SensorManager.cpp camera/camera_shim.cpp
+
+LOCAL_C_INCLUDES := camera
+LOCAL_SHARED_LIBRARIES := libgui libutils liblog libbinder libandroid
+LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
