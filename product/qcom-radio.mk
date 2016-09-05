@@ -13,7 +13,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.radio.apm_sim_not_pwdn=1 \
     ro.telephony.call_ring.multiple=false \
-    ro.use_data_netmgrd=true
+    ro.use_data_netmgrd=false
 
 # RIL
 PRODUCT_PACKAGES += \

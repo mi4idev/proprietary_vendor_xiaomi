@@ -9,4 +9,11 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.bt.hci_transport=smd
+    bluetooth.hfp.client=1 \
+    qcom.bt.dev_power_class=1 \
+    ro.btconfig.if=smd \
+    ro.btconfig.dev=/dev/smd3 \
+    ro.btconfig.vendor=qcom \
+    ro.btconfig.chip=WCN3680B
+
+
