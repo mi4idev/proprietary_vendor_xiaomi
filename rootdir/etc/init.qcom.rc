@@ -31,6 +31,8 @@ import init.qcom.usb.rc
 import init.target.rc
 
 on init
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
