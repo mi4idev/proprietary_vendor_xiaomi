@@ -31,10 +31,15 @@ import init.qcom.usb.rc
 import init.target.rc
 
 on init
+    export LD_SHIM_LIBS /system/vendor/bin/mm-pp-daemon|libcamera_shim.so
+
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
 
     # Set permissions for persist partition
     mkdir /persist 0771 system system
+
+    # Support legacy paths
+    symlink /sdcard /storage/sdcard0
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -45,10 +50,6 @@ on early-boot
     write /sys/module/pil_msa/parameters/modem_auth_timeout_ms ${persist.sys.modem_auth_timeout}
     write /sys/module/peripheral_loader/parameters/proxy_timeout_ms ${persist.sys.pil_proxy_timeout}
     write /sys/kernel/boot_adsp/boot 1
-
-on post-fs
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -606,7 +607,6 @@ on charger
 
 on ffbm
     trigger fs
-    trigger post-fs
     trigger post-fs-data
 
     # Load properties from /system/ + /factory after fs mount. Place
