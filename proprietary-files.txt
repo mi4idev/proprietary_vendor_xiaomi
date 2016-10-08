@@ -42,7 +42,7 @@ vendor/lib64/libbtnv.so
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.msm8916.so
+lib/hw/camera.vendor.msm8916.so
 lib/libmm-qcamera.so
 lib/libmorpho_panorama.so
 lib/libc2dcolorconvert.so
