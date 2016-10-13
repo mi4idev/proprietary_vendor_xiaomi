@@ -33,7 +33,7 @@ import init.target.rc
 on init
     export LD_SHIM_LIBS /system/vendor/bin/mm-pp-daemon|libcamera_shim.so
 
-    mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
     # Set permissions for persist partition
     mkdir /persist 0771 system system
